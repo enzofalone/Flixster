@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide
 class MovieAdapter(private val context: Context, private val movies: List<Movie>) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false)
         return ViewHolder(view)
@@ -33,10 +35,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         fun bind(movie: Movie) {
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
-            Glide.with(context).load(movie.posterImageURL)
-                .placeholder(R.drawable.placeholder)
-                .error(R.drawable.error)
-                .into(ivPoster)
+            Glide.with(context).load(movie.posterImageURL).into(ivPoster)
         }
     }
 
