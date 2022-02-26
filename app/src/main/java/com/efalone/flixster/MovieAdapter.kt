@@ -1,6 +1,5 @@
 package com.efalone.flixster
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 class MovieAdapter(private val context: Context, private val movies: List<Movie>) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
@@ -29,13 +29,26 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivPoster = itemView.findViewById<ImageView>(R.id.ivPoster)
+//        private val ivBackdrop = itemView.findViewById<ImageView>(R.id.ivBackdrop)
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvOverview = itemView.findViewById<TextView>(R.id.tvOverview)
 
         fun bind(movie: Movie) {
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
-            Glide.with(context).load(movie.posterImageURL).into(ivPoster)
+
+            Glide.with(context)
+                .load(movie.posterImageURL)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(ivPoster)
+
+//            Glide.with(context)
+//                .load(movie.backdropImageURL)
+//                .placeholder(R.drawable.placeholder)
+//                .error(R.drawable.error)
+//                    .fitCenter()
+//                .into(ivBackdrop)
         }
     }
 
