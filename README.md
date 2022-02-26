@@ -22,7 +22,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 `TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
 <img src="https://github.com/enzofalone/Flixster/blob/main/portraitflix.gif" width=250><br>
-<img src="https://github.com/enzofalone/Flixster/blob/main/landscapeflix.gif" width=250><br>
+<img src="https://github.com/enzofalone/Flixster/blob/main/landscapeflix.gif" width=400><br>
 
 ### Notes
 I did find challenges trying to build the backdrop for landscape. When trying to make two Glide calls, it would throw me an error and decided to comment everything out and try to fix it later for self-learning.
