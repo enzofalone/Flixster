@@ -73,8 +73,8 @@ class DetailActivity : YouTubeBaseActivity() {
                 p2: Boolean
             ) {
                 Log.i(TAG, "onInitializationSuccess")
-                //if the popularity is less than five stars, just load the video, otherwise, play it instantly
-                if(movie.voteAverage < 5) {
+                //if the popularity is less than seven stars, just load the video, otherwise, play it instantly
+                if(movie.voteAverage < 7) {
                     player?.cueVideo(youtubeKey)
                 } else {
                     player?.loadVideo(youtubeKey)
