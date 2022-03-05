@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
@@ -34,6 +36,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         //        private val ivBackdrop = itemView.findViewById<ImageView>(R.id.ivBackdrop)
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvOverview = itemView.findViewById<TextView>(R.id.tvOverview)
+        private val constraintLayout = itemView.findViewById<ConstraintLayout>(R.id.ConstraintLayout)
 
         init {
             itemView.setOnClickListener(this)
@@ -47,6 +50,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
                 .load(movie.posterImageURL)
                 .placeholder(R.drawable.placeholder)
                 .error(R.drawable.error)
+                .transform(RoundedCorners(20))
                 .into(ivPoster)
 
 //TODO: fix backdrop image, code commented below does not work
