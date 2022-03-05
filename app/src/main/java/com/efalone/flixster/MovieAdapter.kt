@@ -48,8 +48,10 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
 
             Glide.with(context)
                 .load(movie.posterImageURL)
+                .dontAnimate()
                 .placeholder(R.drawable.placeholder)
                 .error(R.drawable.error)
+                .fitCenter()
                 .transform(RoundedCorners(20))
                 .into(ivPoster)
 
